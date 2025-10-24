@@ -519,12 +519,7 @@ def save_lens_3D(save_dir: str,
     if save_dir is not None:
         if not osp.exists(save_dir):
             mkdir(save_dir)
-    # check types
-    print(type(surf_poly[0]))
-    print(type(bridge_poly[0]))
-    print(type(ap_poly[0]))
-    print(type(sensor_poly))
-    print(type(rays_poly_fov[0]))
+
     # merge meshes
     merged_surf_poly = merge([sp.get_poly_data() for sp in surf_poly if sp is not None]) # NEED TO CHANGE THE BEHAVIOR to see if n_point is 0 / Default
     merged_bridge_poly = merge([bp.get_poly_data() for bp in bridge_poly])
